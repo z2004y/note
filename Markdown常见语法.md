@@ -69,12 +69,12 @@ Markdown是一种轻量级标记语言，虽然语法相对简洁，但涵盖了
 
 ## 6. 图片
 ### 6.1 行内式图片
-![替代文本](https://example.com/image.jpg "图片标题")
+![替代文本](https://gips1.baidu.com/it/u=1971954603,2916157720&fm=3028&app=3028&f=JPEG&fmt=auto?w=1920&h=2560 "图片标题")
 
 ### 6.2 参考式图片
 ![替代文本][2]
 
-[2]: https://example.com/image.jpg "图片标题"
+[2]: https://gips1.baidu.com/it/u=1971954603,2916157720&fm=3028&app=3028&f=JPEG&fmt=auto?w=1920&h=2560"图片标题"
 
 ## 7. 代码块
 ### 7.1 行内代码
@@ -120,53 +120,32 @@ def add(a, b):
 要显示特殊字符本身，如 `#`，可以使用反斜杠转义：\# ，显示为 `#`。
 
 以上涵盖了Markdown常见的大部分语法，不同的Markdown解析器可能在细节上略有差异，但基本的语法规则是通用的。 
-<div class="mermaid">
-gantt
-    dateFormat  MM-DD
-    title 课程学习计划甘特图
-    axisFormat %m-%d
 
-    section 数学课程
-    线性代数学习 :a1, 01-01, 01-15
-    微积分学习   :a2, after a1, 15d
+```mermaid
+graph LR
+    classDef startend fill:#F5EBFF,stroke:#BE8FED,stroke-width:2px
+    classDef process fill:#E5F6FF,stroke:#73A6FF,stroke-width:2px
+    classDef decision fill:#FFF6CC,stroke:#FFBC52,stroke-width:2px
+    A([开始]):::startend --> B{用户输入用户名和密码}:::decision
+    B -->|输入正确| C(验证用户信息):::process
+    B -->|输入错误| D(提示重新输入):::process
+    D --> B
+    C --> E{验证成功?}:::decision
+    E -->|是| F(登录系统):::process
+    E -->|否| D
+    F --> G([结束]):::startend
+```
+```mermaid
+graph LR
+    classDef startend fill:#F5EBFF,stroke:#BE8FED,stroke-width:2px;
+    classDef process fill:#E5F6FF,stroke:#73A6FF,stroke-width:2px;
+    classDef decision fill:#FFF6CC,stroke:#FFBC52,stroke-width:2px;
 
-    section 编程课程
-    Python基础学习 :b1, 01-01, 01-20
-    Python项目实践 :b2, after b1, 10d
-    Java基础学习   :b3, 01-10, 01-25
-    Java项目实践   :b4, after b3, 12d
+    A([开始]):::startend --> B{是否需要认证?}:::decision
+    B -->|是| C(进行认证):::process
+    B -->|否| D(直接访问):::process
+    C --> E(访问资源):::process
+    D --> E
+    E --> F([结束]):::startend
+```
 
-    section 英语课程
-    词汇积累      :c1, 01-01, 01-31
-    语法学习      :c2, after c1, 15d
-    口语练习      :c3, after c2, 15d
-</div>
-<div class="mermaid">
-mindmap
-    健康生活方式
-        合理饮食
-            均衡膳食
-                蔬菜
-                水果
-                蛋白质
-            控制食量
-            规律进餐
-        适量运动
-            有氧运动
-                跑步
-                游泳
-                骑自行车
-            力量训练
-                举重
-                俯卧撑
-        良好睡眠
-            规律作息
-            舒适睡眠环境
-            睡前放松
-        心理调节
-            情绪管理
-            压力释放
-                冥想
-                瑜伽
-            保持积极心态
-</div>
